@@ -1,109 +1,96 @@
 <!DOCTYPE html>
 <html lang="hr">
 <head>
-    <meta charset="UTF-8">
-    <title>Moje Selo</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f4f4f4;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Moja Random Stranica</title>
 
-        header {
-            background: #2e8b57;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      color: #222;
+      transition: 0.3s;
+    }
 
-        nav {
-            background: #333;
-            padding: 10px;
-            text-align: center;
-        }
+    header {
+      background: linear-gradient(90deg, #4facfe, #00f2fe);
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
 
-        nav a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
 
-        nav a:hover {
-            color: #2e8b57;
-        }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #4facfe;
+      color: white;
+      cursor: pointer;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
 
-        .container {
-            padding: 20px;
-        }
+    button:hover {
+      background: #0077ff;
+    }
 
-        .card {
-            background: white;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+    .box {
+      margin: 20px auto;
+      width: 200px;
+      height: 200px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
 
-        footer {
-            background: #2e8b57;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
+    .dark {
+      background: #121212;
+      color: white;
+    }
 
-        img {
-            max-width: 100%;
-            border-radius: 10px;
-        }
-    </style>
+    .dark .box {
+      background: #1e1e1e;
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-    <h1>Dobrodošli u moje selo</h1>
-    <p>Najbolje selo na svijetu 🌍</p>
-</header>
+  <header>
+    <h1>🔥 Moja Random Web Stranica</h1>
+  </header>
 
-<nav>
-    <a href="#">Početna</a>
-    <a href="#">Galerija</a>
-    <a href="#">Događaji</a>
-    <a href="#">O nama</a>
-</nav>
+  <div class="container">
+    <p>Klikni gumb i nešto će se promijeniti 😄</p>
 
-<div class="container">
+    <div class="box" id="box">HELLO</div>
 
-    <div class="card">
-        <h2>📰 Vijesti</h2>
-        <p>Danas se igra nogometna utakmica na igralištu u 18:00!</p>
-    </div>
+    <button onclick="changeText()">Promijeni tekst</button>
+    <button onclick="toggleDark()">Dark mode</button>
+  </div>
 
-    <div class="card">
-        <h2>📸 Galerija</h2>
-        <img src="https://via.placeholder.com/600x300" alt="Slika sela">
-        <p>Dodaj svoje slike uskoro!</p>
-    </div>
+  <script>
+    function changeText() {
+      const texts = ["HELLO", "WOW 😎", "RANDOM", "KLIK!", "WEB FUN"];
+      const box = document.getElementById("box");
+      box.innerText = texts[Math.floor(Math.random() * texts.length)];
+    }
 
-    <div class="card">
-        <h2>📅 Događaji</h2>
-        <ul>
-            <li>Turnir - Subota</li>
-            <li>Fešta - Nedjelja</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2>🧑‍🤝‍🧑 O selu</h2>
-        <p>Naše selo ima dugu povijest i odlične ljude!</p>
-    </div>
-
-</div>
-
-<footer>
-    <p>© 2026 Moje Selo</p>
-</footer>
+    function toggleDark() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
 
 </body>
 </html>
