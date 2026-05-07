@@ -6,23 +6,31 @@
 
 <title>Matica slovačka</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
 <style>
 
-body{
+*{
     margin:0;
-    font-family:Arial, sans-serif;
-    background:#f4f4f4;
-    color:#222;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* HEADER */
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f4f7fb;
+    color:#222;
+    overflow-x:hidden;
+}
 
-header{
+/* HERO */
+
+.hero{
     height:100vh;
 
     background:
-    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url("https://images.unsplash.com/photo-1521295121783-8a321d551ad2");
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url("https://images.unsplash.com/photo-1506744038136-46273834b3fb");
 
     background-size:cover;
     background-position:center;
@@ -33,34 +41,91 @@ header{
     text-align:center;
 
     color:white;
+    padding:20px;
 }
 
-header h1{
-    font-size:70px;
+.hero-content{
+    animation:fadeIn 2s;
 }
 
-header p{
-    font-size:22px;
-    max-width:700px;
-    margin:auto;
+.hero h1{
+    font-size:85px;
+    letter-spacing:3px;
+    text-shadow:0 0 20px rgba(255,255,255,0.4);
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:24px;
+    max-width:800px;
+}
+
+.btn{
+    margin-top:35px;
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(45deg,#1565c0,#42a5f5);
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 20px rgba(66,165,245,0.7);
 }
 
 /* SEKCIJE */
 
 section{
-    padding:70px 10%;
+    padding:90px 10%;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.title h2{
+    font-size:45px;
+    color:#0d47a1;
+}
+
+.title p{
+    margin-top:10px;
+    color:#666;
+}
+
+/* KARTICE */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
 }
 
 .card{
     background:white;
-    padding:30px;
-    border-radius:20px;
-    margin-top:25px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.4s;
 }
 
-h2{
-    color:#0d47a1;
+.card:hover{
+    transform:translateY(-12px);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#1565c0;
+    font-size:28px;
+}
+
+.card p{
+    line-height:1.7;
 }
 
 /* GALERIJA */
@@ -69,23 +134,33 @@ h2{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:20px;
-    margin-top:20px;
+    margin-top:40px;
 }
 
 .gallery img{
     width:100%;
-    height:220px;
+    height:250px;
     object-fit:cover;
-    border-radius:15px;
+    border-radius:20px;
+    transition:0.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
 }
 
 /* MAPA */
 
+.map{
+    margin-top:50px;
+}
+
 iframe{
     width:100%;
-    height:400px;
+    height:450px;
     border:none;
-    border-radius:15px;
+    border-radius:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
 /* FOOTER */
@@ -94,24 +169,40 @@ footer{
     background:#0d47a1;
     color:white;
     text-align:center;
-    padding:20px;
+    padding:35px;
+    margin-top:50px;
 }
 
-/* BUTTON */
+/* ANIMACIJA */
 
-button{
-    padding:12px 25px;
-    border:none;
-    border-radius:10px;
-    background:#0d47a1;
-    color:white;
-    cursor:pointer;
-    font-size:16px;
-    margin-top:20px;
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
-button:hover{
-    background:#002171;
+/* FLOATING KRUGOVI */
+
+.circle{
+    position:fixed;
+    border-radius:50%;
+    background:rgba(255,255,255,0.08);
+    animation:float 15s linear infinite;
+    z-index:-1;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(110vh) scale(0);
+    }
+    to{
+        transform:translateY(-120vh) scale(1.5);
+    }
 }
 
 </style>
@@ -119,49 +210,87 @@ button:hover{
 
 <body>
 
-<header>
+<div class="hero">
 
-<div>
+    <div class="hero-content">
 
-    <h1>MATICA SLOVAČKA</h1>
+        <h1>MATICA SLOVAČKA</h1>
 
-    <p>
-        Kulturna organizacija koja čuva slovačku tradiciju,
-        jezik, običaje i kulturnu baštinu.
-    </p>
+        <p>
+            Očuvanje slovačkog jezika, kulture,
+            tradicije i zajedništva kroz generacije.
+        </p>
 
-    <button onclick="pozdrav()">
-        Saznaj više
-    </button>
+        <button class="btn" onclick="welcome()">
+            Istraži više
+        </button>
+
+    </div>
 
 </div>
-
-</header>
 
 <section>
 
-<div class="card">
+    <div class="title">
+        <h2>O organizaciji</h2>
 
-    <h2>📖 O Matici slovačkoj</h2>
+        <p>
+            Kulturna organizacija posvećena očuvanju slovačke baštine.
+        </p>
+    </div>
 
-    <p>
-        Matica slovačka je kulturna organizacija koja promiče
-        slovački jezik, književnost, tradiciju i kulturu.
-        Organiziraju se razni događaji, folklorne priredbe,
-        izložbe i kulturne aktivnosti.
-    </p>
+    <div class="cards">
 
-</div>
+        <div class="card">
 
-<div class="card">
+            <h3>📖 Povijest</h3>
 
-    <h2>🎶 Tradicija i kultura</h2>
+            <p>
+                Matica slovačka djeluje s ciljem očuvanja
+                slovačke kulture, jezika i identiteta.
+                Organiziraju se kulturni događaji,
+                radionice, folklorne priredbe i izložbe.
+            </p>
 
-    <p>
-        Slovačka kultura poznata je po narodnim nošnjama,
-        glazbi, plesu i običajima. Matica slovačka pomaže
-        očuvati kulturnu baštinu za buduće generacije.
-    </p>
+        </div>
+
+        <div class="card">
+
+            <h3>🎶 Tradicija</h3>
+
+            <p>
+                Slovačka tradicija poznata je po narodnim
+                nošnjama, glazbi, plesovima i običajima.
+                Kultura se prenosi kroz različite generacije.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>🌍 Zajednica</h3>
+
+            <p>
+                Organizacija okuplja ljude koji žele
+                njegovati slovačku kulturu i jačati
+                zajedništvo kroz kulturne aktivnosti.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <div class="title">
+        <h2>Galerija</h2>
+
+        <p>
+            Fotografije inspirirane prirodom i kulturom.
+        </p>
+    </div>
 
     <div class="gallery">
 
@@ -173,28 +302,60 @@ button:hover{
 
     </div>
 
-</div>
+</section>
 
-<div class="card">
+<section class="map">
 
-    <h2>📍 Lokacija</h2>
+    <div class="title">
+        <h2>Lokacija</h2>
+
+        <p>
+            Slovačka i kulturna povezanost zajednice.
+        </p>
+    </div>
 
     <iframe
     src="https://maps.google.com/maps?q=Slovačka&t=&z=6&ie=UTF8&iwloc=&output=embed">
     </iframe>
 
-</div>
-
 </section>
 
 <footer>
-    Web stranicu izradio učenik 🙂
+
+    <h3>Matica slovačka</h3>
+
+    <p>
+        Web stranicu izradio učenik 🙂
+    </p>
+
 </footer>
 
 <script>
 
-function pozdrav(){
+function welcome(){
+
     alert("Dobrodošli na stranicu Matice slovačke!");
+}
+
+/* FLOATING KRUGOVI */
+
+for(let i=0;i<25;i++){
+
+    let circle = document.createElement("div");
+
+    circle.classList.add("circle");
+
+    let size = Math.random()*120;
+
+    circle.style.width = size + "px";
+    circle.style.height = size + "px";
+
+    circle.style.left = Math.random()*100 + "vw";
+
+    circle.style.animationDuration =
+    8 + Math.random()*12 + "s";
+
+    document.body.appendChild(circle);
 }
 
 </script>
