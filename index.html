@@ -3,361 +3,131 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Matica slovačka</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<title>Random Stranica</title>
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Poppins',sans-serif;
-    background:#f4f7fb;
-    color:#222;
-    overflow-x:hidden;
-}
-
-/* HERO */
-
-.hero{
-    height:100vh;
-
-    background:
-    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url("https://images.unsplash.com/photo-1506744038136-46273834b3fb");
-
-    background-size:cover;
-    background-position:center;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-
-    color:white;
-    padding:20px;
-}
-
-.hero-content{
-    animation:fadeIn 2s;
-}
-
-.hero h1{
-    font-size:85px;
-    letter-spacing:3px;
-    text-shadow:0 0 20px rgba(255,255,255,0.4);
-}
-
-.hero p{
-    margin-top:20px;
-    font-size:24px;
-    max-width:800px;
-}
-
-.btn{
-    margin-top:35px;
-    padding:15px 35px;
-    border:none;
-    border-radius:50px;
-    background:linear-gradient(45deg,#1565c0,#42a5f5);
-    color:white;
-    font-size:18px;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.btn:hover{
-    transform:scale(1.08);
-    box-shadow:0 0 20px rgba(66,165,245,0.7);
-}
-
-/* SEKCIJE */
-
-section{
-    padding:90px 10%;
-}
-
-.title{
-    text-align:center;
-    margin-bottom:50px;
-}
-
-.title h2{
-    font-size:45px;
-    color:#0d47a1;
-}
-
-.title p{
-    margin-top:10px;
-    color:#666;
-}
-
-/* KARTICE */
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
-}
-
-.card{
-    background:white;
-    padding:35px;
-    border-radius:25px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
-    transition:0.4s;
-}
-
-.card:hover{
-    transform:translateY(-12px);
-}
-
-.card h3{
-    margin-bottom:15px;
-    color:#1565c0;
-    font-size:28px;
-}
-
-.card p{
-    line-height:1.7;
-}
-
-/* GALERIJA */
-
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-    margin-top:40px;
-}
-
-.gallery img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-    border-radius:20px;
-    transition:0.4s;
-}
-
-.gallery img:hover{
-    transform:scale(1.05);
-}
-
-/* MAPA */
-
-.map{
-    margin-top:50px;
-}
-
-iframe{
-    width:100%;
-    height:450px;
-    border:none;
-    border-radius:25px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.1);
-}
-
-/* FOOTER */
-
-footer{
-    background:#0d47a1;
-    color:white;
-    text-align:center;
-    padding:35px;
-    margin-top:50px;
-}
-
-/* ANIMACIJA */
-
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(30px);
+    body{
+        margin:0;
+        font-family:Arial, sans-serif;
+        background:linear-gradient(135deg,#1e3c72,#2a5298);
+        color:white;
+        overflow-x:hidden;
     }
-    to{
-        opacity:1;
-        transform:translateY(0);
+
+    header{
+        text-align:center;
+        padding:40px;
+        background:rgba(0,0,0,0.3);
+        backdrop-filter:blur(5px);
     }
-}
 
-/* FLOATING KRUGOVI */
-
-.circle{
-    position:fixed;
-    border-radius:50%;
-    background:rgba(255,255,255,0.08);
-    animation:float 15s linear infinite;
-    z-index:-1;
-}
-
-@keyframes float{
-    from{
-        transform:translateY(110vh) scale(0);
+    header h1{
+        font-size:50px;
+        margin:0;
     }
-    to{
-        transform:translateY(-120vh) scale(1.5);
-    }
-}
 
+    header p{
+        font-size:20px;
+        opacity:0.8;
+    }
+
+    .container{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+        gap:20px;
+        padding:30px;
+    }
+
+    .card{
+        background:rgba(255,255,255,0.1);
+        border-radius:20px;
+        padding:20px;
+        transition:0.3s;
+        backdrop-filter:blur(8px);
+        box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .card:hover{
+        transform:translateY(-10px) scale(1.03);
+    }
+
+    .card h2{
+        margin-top:0;
+    }
+
+    button{
+        padding:12px 25px;
+        border:none;
+        border-radius:10px;
+        background:#00c6ff;
+        color:white;
+        font-size:16px;
+        cursor:pointer;
+        transition:0.3s;
+    }
+
+    button:hover{
+        background:#0072ff;
+    }
+
+    .random-box{
+        text-align:center;
+        padding:40px;
+    }
+
+    footer{
+        text-align:center;
+        padding:20px;
+        background:rgba(0,0,0,0.3);
+        margin-top:20px;
+    }
 </style>
 </head>
 
 <body>
 
-<div class="hero">
+<header>
+    <h1>🔥 Random Web Stranica 🔥</h1>
+    <p>Napravljena samo iz dosade 😎</p>
+</header>
 
-    <div class="hero-content">
+<div class="container">
 
-        <h1>MATICA SLOVAČKA</h1>
+    <div class="card">
+        <h2>🎮 Gaming</h2>
+        <p>Ovdje možeš staviti nešto o igricama, Robloxu ili Minecraftu.</p>
+        <button onclick="alert('Gaming sekcija!')">Klikni</button>
+    </div>
 
-        <p>
-            Očuvanje slovačkog jezika, kulture,
-            tradicije i zajedništva kroz generacije.
-        </p>
+    <div class="card">
+        <h2>🐦 Papige</h2>
+        <p>Dodaj slike svojih papiga i informacije o njima.</p>
+        <button onclick="alert('Papige su zakon!')">Klikni</button>
+    </div>
 
-        <button class="btn" onclick="welcome()">
-            Istraži više
-        </button>
-
+    <div class="card">
+        <h2>💻 Programiranje</h2>
+        <p>Možeš učiti HTML, CSS i JavaScript.</p>
+        <button onclick="alert('Kodiranjeee!')">Klikni</button>
     </div>
 
 </div>
 
-<section>
-
-    <div class="title">
-        <h2>O organizaciji</h2>
-
-        <p>
-            Kulturna organizacija posvećena očuvanju slovačke baštine.
-        </p>
-    </div>
-
-    <div class="cards">
-
-        <div class="card">
-
-            <h3>📖 Povijest</h3>
-
-            <p>
-                Matica slovačka djeluje s ciljem očuvanja
-                slovačke kulture, jezika i identiteta.
-                Organiziraju se kulturni događaji,
-                radionice, folklorne priredbe i izložbe.
-            </p>
-
-        </div>
-
-        <div class="card">
-
-            <h3>🎶 Tradicija</h3>
-
-            <p>
-                Slovačka tradicija poznata je po narodnim
-                nošnjama, glazbi, plesovima i običajima.
-                Kultura se prenosi kroz različite generacije.
-            </p>
-
-        </div>
-
-        <div class="card">
-
-            <h3>🌍 Zajednica</h3>
-
-            <p>
-                Organizacija okuplja ljude koji žele
-                njegovati slovačku kulturu i jačati
-                zajedništvo kroz kulturne aktivnosti.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<section>
-
-    <div class="title">
-        <h2>Galerija</h2>
-
-        <p>
-            Fotografije inspirirane prirodom i kulturom.
-        </p>
-    </div>
-
-    <div class="gallery">
-
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb">
-
-        <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963">
-
-        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e">
-
-    </div>
-
-</section>
-
-<section class="map">
-
-    <div class="title">
-        <h2>Lokacija</h2>
-
-        <p>
-            Slovačka i kulturna povezanost zajednice.
-        </p>
-    </div>
-
-    <iframe
-    src="https://maps.google.com/maps?q=Slovačka&t=&z=6&ie=UTF8&iwloc=&output=embed">
-    </iframe>
-
-</section>
+<div class="random-box">
+    <h2>🎲 Random broj:</h2>
+    <h1 id="broj">0</h1>
+    <button onclick="randomBroj()">Generiraj</button>
+</div>
 
 <footer>
-
-    <h3>Matica slovačka</h3>
-
-    <p>
-        Web stranicu izradio učenik 🙂
-    </p>
-
+    © 2026 Random Stranica
 </footer>
 
 <script>
-
-function welcome(){
-
-    alert("Dobrodošli na stranicu Matice slovačke!");
+function randomBroj(){
+    let broj = Math.floor(Math.random()*1000);
+    document.getElementById("broj").innerText = broj;
 }
-
-/* FLOATING KRUGOVI */
-
-for(let i=0;i<25;i++){
-
-    let circle = document.createElement("div");
-
-    circle.classList.add("circle");
-
-    let size = Math.random()*120;
-
-    circle.style.width = size + "px";
-    circle.style.height = size + "px";
-
-    circle.style.left = Math.random()*100 + "vw";
-
-    circle.style.animationDuration =
-    8 + Math.random()*12 + "s";
-
-    document.body.appendChild(circle);
-}
-
 </script>
 
 </body>
